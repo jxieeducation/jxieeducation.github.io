@@ -1,0 +1,13 @@
+---
+layout: page
+title: Reading list
+header: Recommended reads
+group: 
+---
+{% include JB/setup %}
+
+<a href="{{site.production_url}}" class="btn btn-large">Back</a>
+
+{% for post in site.categories['readinglist'] %}
+	<li><a href="{{site.production_url}}{{post.url}}">{{ post.title }}</a></li>
+{% endfor %}

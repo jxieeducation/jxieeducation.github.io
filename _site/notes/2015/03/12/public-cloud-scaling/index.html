@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Public Cloud Scaling</title>
+    
+    <meta name="author" content="Jason Xie">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap styles -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sticky Footer -->
+    <link href="/assets/themes/bootstrap-3/bootstrap/css/bs-sticky-footer.css" rel="stylesheet">
+    
+    <!-- Custom styles -->
+    <link href="/assets/themes/bootstrap-3/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div id="wrap">
+    
+      <div class="container">
+        
+<div class="page-header">
+  <h1>Public Cloud Scaling <small>CloudOPS talk @ lithiumHQ </small></h1>
+</div>
+
+<div class="row post-full">
+  <a href="http://127.0.0.1:4000" class="btn btn-large">Back</a>
+  <div class="col-xs-12">
+    <div class="date">
+      <span>12 March 2015</span>
+    </div>
+    <div class="content">
+      
+<h3 id="intro">Intro:</h3>
+<ul>
+  <li>steve jobs said that “people who know what they’re talking about, don’t need PowerPoint.*”, that’s why I am using google slides</li>
+  <li>the app is a social app that congests social data and provides customer supports</li>
+  <li>Auto Scaling Groups, common notation (x, y) means an ASG with min X and max Y machines</li>
+</ul>
+
+<h3 id="stack">Stack:</h3>
+<ul>
+  <li>pre-reqs to moving into the public cloud: (VPC, DNS, yum / code repo..etc.)</li>
+  <li>amazon region selection: rule —&gt; hv 2+ regions, so that outage in one does not take down your system</li>
+  <li>cloudformation: separate long-lived things (S3, ELB) with ephemeral things (apps) into separate templates.</li>
+  <li>config mgmt: a lot of shifts in industry—&gt; chef, puppet…etc. (chef is easier)</li>
+  <li>regular chef or chef-solo: easy to hv teams change each others’ configs —&gt; soon hv a community chef book and each individual teams’ chef-solo books</li>
+  <li>private (yum) repo —&gt; tar balls on FTP is not fun. perhaps try gopher.</li>
+  <li>yum-s3-repo-manager (by lithium), google on github. its a python script that all lithium uses</li>
+  <li>how it works: place an RPM in “inbox” s3 folder and monitor process. puts anything it finds into the repo and then uploads the data back to s3.</li>
+  <li>build system - jenkins, con: not cross zone (US West != US East)</li>
+  <li>use ec2-plugin in jenkins to launch instances as needed and tear them down afterwards, a lot of work done for user to save $ (joke: no one at lithium’s social net team know where the jerkin server is cuz it just shows up)</li>
+  <li>DNS - managing binds suck. Use Route53 for internal stuff.</li>
+  <li>MySQL - no RDS, lithium has good DBAs. want to tolerate instance and area zone failures without intervention
+use MHA (from Fb) and MHA-heper to scale MySQL</li>
+  <li>2 AutoScalingGroups 1. master-eligible ASG (1 master, 1 read slave, 1 backup slave)  (3,3) 2. MHA group —&gt; upon creation of stack, selection of master and MHA manager done to prevent them from being in the same area zone</li>
+  <li>Floating IPs in AWS - problem, need cross-AreaZone IP address. DNS failover doesn’t hv crisp boundary across all hosts and takes too long</li>
+  <li>Soln: use VPC route tables, put torte in route-tables to route 192.168.x.y/32 to specific ENI. upon failover, update existing routes to point to new ENI of the new master. update and traffic switch controlled at network layer and is instantaneous</li>
+  <li>if we notice master in AZ1 fail, we change master to AZ2 (note group 1 and 2 are in the same region, but it’s ok, since new data is saved, need to wait for AZ1 to go up again).</li>
+  <li>elasticsearch - (3,3) cross-AZ ASG. use AWS plugin. make sure to tune open file descriptor limits so cluster doesn’t fail easily</li>
+  <li>zookeeper - uses netflix’s exhibitor to make bootstrapping cluster and node IDs much easier. also (3,3) ASG - does a lot of leader-election work over master-slave relationship</li>
+  <li>note: don’t put zookeeper on ebs, put on ephemeral SSD disk, cuz it’s sensitive to IO latency</li>
+  <li>redis - used multi-AZ elastic cache redis. to make life easier: use ElastiCache Redis</li>
+  <li>ActiveMQ —&gt; RabbitMQ —&gt; ActiveMQ —&gt; SQS</li>
+  <li>ActiveMQ = poorly tested, RabbitMQ doesn’t work well in the long term (very sensitive to delayed connections, make Queue explode)</li>
+  <li>switched to SQS (also buggy, but Amazon is doing it, so expecting improvement)</li>
+  <li>
+    <p>java apps - the actual business app. easier because only need to worry about horizontal scalability</p>
+  </li>
+  <li>security on the public cloud:</li>
+  <li>local euphemeral disks —&gt; can encrypt the local ephemeral disk</li>
+  <li>EBS storage —&gt; use —encrypted flag during AWS Cli bootstrap
+scripting guides: **Bash - ppl not disciplined with whats in the bash cuz it’s so useful **Ruby: versioning can get hard and few people write ruby in DevOps community. **Python: 2-&gt;3 switch is difficult</li>
+  <li>Fabric —&gt; performing administrative tasks: thread / heap dumps, restarts, hotfix deploy orchestration</li>
+  <li>Datadog -&gt; monitoring</li>
+  <li>PagerDuty -&gt; email / call notification</li>
+</ul>
+
+<p>full video: 
+<a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=qQWPsR6Innc" target="_blank"><img src="http://img.youtube.com/vi/qQWPsR6Innc/0.jpg" alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a></p>
+
+    </div>
+  </div>
+</div>
+<br>
+
+
+      </div>
+
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 Jason Xie
+        </p>
+      </div>
+    </div>
+
+    
+
+
+    <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+

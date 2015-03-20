@@ -1,0 +1,10 @@
+
+http://127.0.0.1:4000/essays.html
+http://127.0.0.1:4000/index.html
+http://127.0.0.1:4000/notes.html
+http://127.0.0.1:4000/readinglist.html
+http://127.0.0.1:4000/sitemap.txt
+
+http://127.0.0.1:4000/notes/2015/03/19/Scala-Rapture-and-Spark-Notebook
+http://127.0.0.1:4000/notes/2015/03/12/public-cloud-scaling
+http://127.0.0.1:4000/readinglist/2015/02/28/February-List

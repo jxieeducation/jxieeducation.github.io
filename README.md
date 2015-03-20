@@ -1,2 +1,1 @@
-# jxieeducation.github.io
-personal web page
+A personal website

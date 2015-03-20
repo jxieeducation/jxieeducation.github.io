@@ -1,0 +1,13 @@
+---
+layout: page
+title: Essays
+header: Collection of opinions
+group: 
+---
+{% include JB/setup %}
+
+<a href="{{site.production_url}}" class="btn btn-large">Back</a>
+
+{% for post in site.categories['essays'] %}
+	<li><a href="{{site.production_url}}{{post.url}}">{{ post.title }}</a></li>
+{% endfor %}
