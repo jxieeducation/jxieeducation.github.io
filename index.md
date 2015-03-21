@@ -28,7 +28,7 @@ tagline: Some thoughts on stuff
 * ATP tennis analysis from a long time ago [articles](http://www.sportskeeda.com/profile/jason-xie)
 * TEDxRichmondHill talk on coincidences [tweets](https://twitter.com/TEDxRHill/status/367053026470543361) [talk](http://www.tedxrichmondhill.com/videos)
 * An april fools joke for my roomate [game](http://diegobird.paperplane.io/)
-* Why I don't make much [games](https://www.dropbox.com/s/vzprwvn3yegdips/rainsetup.exe?dl=0) anymore [eduational booklet](https://github.com/jxieeducation/Rain/blob/master/Rain%20Action%20Guide.pdf)
+* Why I don't make [games](https://www.dropbox.com/s/vzprwvn3yegdips/rainsetup.exe?dl=0) anymore :( [eduational booklet](https://github.com/jxieeducation/Rain/blob/master/Rain%20Action%20Guide.pdf)
 
 ####Latest
 {% for post in site.posts limit:3 %}  
