@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Jason Xie</title>
+    <title>Ruxit System Architecture</title>
     
     <meta name="author" content="Jason Xie">
 
@@ -49,65 +49,52 @@
       <div class="container">
         
 <div class="page-header">
-  <h1>Jason Xie  <small>Some thoughts on stuff</small></h1>
+  <h1>Ruxit System Architecture <small>RUXIT system architecture</small></h1>
 </div>
 
-<div class="row">
-	
+<div class="row post-full">
+  <a href="http://jxieeducation.github.io" class="btn btn-large">Back</a>
   <div class="col-xs-12">
-    
-<p><a href="http://jxieeducation.github.io/notes.html">Notes</a>
-     
-<a href="http://jxieeducation.github.io/readinglist.html">Reading list</a>
-     
-<a href="http://jxieeducation.github.io/essays.html">Essays</a></p>
-
-<p><a href="https://github.com/jxieeducation">Github</a>
-     
-<a href="http://napkins.io/">Past venture</a>
-     
-<a href="https://drive.google.com/folderview?id=0B1bSqZCsa0P3fi1CRzVkY053d3FrY3hZZlE4cHQ3NW40X09BVEFsdTVfcjFwUVRYU3dfNjQ&amp;usp=sharing">Patents</a>
-     
-<a href="http://www.amazon.com/Unschool-Yourself-True-Learning-Ground/dp/1491219467/ref=sr_1_2?ie=UTF8&amp;qid=1426888868&amp;sr=8-2&amp;keywords=unschool+yourself">Book</a></p>
-
-<h4 id="some-funner-things">Some funner things</h4>
-<pre><code>sudo make me a sandwich
-</code></pre>
-
+    <div class="date">
+      <span>22 May 2015</span>
+    </div>
+    <div class="content">
+      
 <ul>
-  <li>Hacker Chrome browser <a href="https://github.com/jxieeducation/Hackathon-Hacker-Chrome-Theme">theme</a></li>
-  <li>Sightreading codebases for programming practice <a href="https://github.com/jxieeducation/repo-sightread">src</a></li>
-  <li>Video summarization algorithm <a href="https://github.com/jxieeducation/tl-dw">code for a hackathon</a></li>
-  <li>ATP tennis analysis from a long time ago <a href="http://www.sportskeeda.com/profile/jason-xie">articles</a></li>
-  <li>TEDxRichmondHill talk on coincidences <a href="https://twitter.com/TEDxRHill/status/367053026470543361">tweets</a> <a href="http://www.tedxrichmondhill.com/videos">talk</a></li>
-  <li>An april fools joke for my roomate <a href="http://diegobird.paperplane.io/">game</a></li>
-  <li>Why I don’t make <a href="https://www.dropbox.com/s/vzprwvn3yegdips/rainsetup.exe?dl=0">games</a> anymore :( <a href="https://github.com/jxieeducation/Rain/blob/master/Rain%20Action%20Guide.pdf">eduational booklet</a></li>
+  <li>RUXIT is a B2B SasS platform, which transitioned to AWS in 80 days (june 2014 - october 2014)</li>
+  <li>1 cluster for a large number of distinct customers. 4 clusters in total (1 on west coast, 2 on east, 1 in Europe)</li>
+  <li>each customer is an agent that communicates with the cluster regularly</li>
 </ul>
 
-<h4 id="latest">Latest</h4>
+<h5 id="overall-architecture">overall architecture:</h5>
+<ul>
+  <li>clients / agents —&gt; elastic load balancer —&gt; proxy —&gt; security gate way —&gt; server —&gt; cassandra DB cluster</li>
+  <li>RUXIT runs 2 clusters on the east coast —&gt; scaled up locally for latency optimization</li>
+  <li>uses cloudcontrol to be the head of the whole system (from provisioning to recovering)</li>
+  <li>after cloud control layer, has a business logic layer —&gt; applies economic optimizations that incorporates RUXIT’s data (contains Monexa, salesforce and Markete…etc.)</li>
+  <li>challenges: AWS scaling, real time provisioning of DNS names, zero downtime without manual intervention (hard to plan beforehand e.g. for e-commcerce sites)</li>
+</ul>
 
-<li>  
-    <span>28 May 2015</span> &raquo;
-    <a href="/readinglist/2015/05/28/2015-April-n-May-List">  
-    2015 April N May List</a>  
-</li>
+<h5 id="how-0-downtime-is-achieved">How 0 downtime is achieved:</h5>
+<ul>
+  <li>over provisioning : never run above two thirds of capacity</li>
+  <li>quarantine mode : if a server node fails, groups will quarantine this node, everyone will know to not communicate with this node anymore to reduce damage to system —&gt; be kind to ur developers, let them sleep until morning</li>
+  <li>rolling updates : 2/3 approach again, keep 2/3 functioning, update the 1/3 horizontally</li>
+  <li>soft stickiness : combining data locality with transparent failover —&gt; imagine like 3-4 layers, with many machines on each layer. if 1 route failed, the agent will try again, this time taking a new random route (this is called constant failover) —&gt; just like constant failover, but give more probability to nodes in locality, this just optimizes the routing</li>
+</ul>
 
-<li>  
-    <span>22 May 2015</span> &raquo;
-    <a href="/notes/2015/05/22/RUXIT-system-architecture">  
-    Ruxit System Architecture</a>  
-</li>
+<h5 id="devops-to-noops-how-to-build-a-noops-team">DevOps to NoOps (how to build a NoOps team)</h5>
+<ul>
+  <li>autonomous operations</li>
+  <li>feedback and transparency</li>
+  <li>everything is production</li>
+  <li>data-driven operations</li>
+</ul>
 
-<li>  
-    <span>30 Mar 2015</span> &raquo;
-    <a href="/readinglist/2015/03/30/2015-March-List">  
-    2015 March List</a>  
-</li>
-
-<p> </p>
-
+    </div>
   </div>
 </div>
+<br>
 
 
       </div>
