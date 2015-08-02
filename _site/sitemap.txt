@@ -5,6 +5,7 @@ http://jxieeducation.github.io/notes.html
 http://jxieeducation.github.io/readinglist.html
 http://jxieeducation.github.io/sitemap.txt
 
+http://jxieeducation.github.io/readinglist/2015/07/31/2015-July-List
 http://jxieeducation.github.io/readinglist/2015/06/28/2015-June-List
 http://jxieeducation.github.io/readinglist/2015/05/28/2015-April-n-May-List
 http://jxieeducation.github.io/notes/2015/05/22/RUXIT-system-architecture
