@@ -6,6 +6,7 @@ tagline: "2015 April n May List"
 ---
 
 * [cs294-101-stream-lecture](https://github.com/substack/cs294-101-streams-lecture) "why unix survived: 1. simplicity 2. correctness 3. consistency 4. completeness can be sacrificed in favor of any other quality"
+
 * [No More Forever Projects](https://medium.com/@dianakimball/no-more-forever-projects-c36b006b51e3) "These days, all my projects start as experiments. No forceful promises, no forever projects. Gravity seeps into the things that stick around."
 * [House of Cards quotes](http://houseofcardsquotes.tumblr.com/) "The gift of a good liar is making people believe that you lack a talent for lying."
 * [My startup failed](https://medium.com/@jasonhuertas/my-startup-failed-6c54bd68c654) "We built a product before understanding the real user need."
