@@ -1,6 +1,6 @@
 ---
 layout: post
-category : tutorial
+category : paper
 tags: word2vec, wordembedding
 tagline: "Appstore Review with Word Embedding"
 ---
