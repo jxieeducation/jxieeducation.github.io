@@ -2,7 +2,7 @@
 layout: post
 category : paper
 tags: SGD
-tagline: "Async Stochastic Gradient Descent"
+tagline: "Hogwild Stochastic Gradient Descent"
 ---
 
 ##Parallelizing SGD
@@ -43,7 +43,7 @@ Because although weight updates would inevitably overwrite each other, the absen
 
 The dataset's features are the states of each square on the board. Each column can be either B(lank), X or O. And the target variables are (w)in, (d)raw or (l)oss. The features and target are normalized and put through a logistic regression classifier via SGD.
 
-I was able to consistently achieve 90-92% accuracy with the [raw](https://github.com/jxieeducation/AsyncSGD_exp/blob/master/connect4/sync.py), [lock-threaded](https://github.com/jxieeducation/AsyncSGD_exp/blob/master/connect4/async_lock.py) and [nolock-threaded](https://github.com/jxieeducation/AsyncSGD_exp/blob/master/connect4/async_nolock.py) implementations. 
+I was able to consistently achieve 90-92% accuracy with the [raw](https://github.com/jxieeducation/HogwildSGD/blob/master/connect4/sync.py), [lock-threaded](https://github.com/jxieeducation/HogwildSGD/blob/master/connect4/async_lock.py) and [nolock-threaded](https://github.com/jxieeducation/HogwildSGD/blob/master/connect4/async_nolock.py) implementations. 
 
 Even though the performance did not improve, the speed of the lock-threaded proved to be much faster compared to the nolock-threaded implementation. 
 
