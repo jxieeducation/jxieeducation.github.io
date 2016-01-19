@@ -1,3 +1,6 @@
+p{
+    word-break: normal;
+}
 .post table{
     border-top:2px solid #777;
     border-bottom: 2px solid #777;
