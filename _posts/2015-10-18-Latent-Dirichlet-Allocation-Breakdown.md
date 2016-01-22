@@ -3,6 +3,7 @@ layout: post
 category : paper
 tags: LDA TopicModeling
 tagline: "A Breakdown of Latent Dirichlet Allocation"
+excerpt: Topic Modeling is a type of natural language processing technique to identify patterns within the text. Latent Dirichlet Allocation is a topic modeling algorithm that tries to identify topics within a corpus. In this post, I share some of my results from the Enron corpus and tips on how to interpret the model.
 ---
 
 ##Latent Dirichlet Allocation & Topic Modeling  

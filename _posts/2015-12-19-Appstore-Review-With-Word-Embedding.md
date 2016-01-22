@@ -3,6 +3,7 @@ layout: post
 category : paper
 tags: word2vec, wordembedding
 tagline: "Appstore Review with Word Embedding"
+excerpt: Word embedding is a technique in NLP / ML where we represent words in vectors based on their semantic context. This is a demonstration of the power of word embedding using word2vec on the Android Playstore review data.
 ---
 
 ###Word Embedding on Appstore Review

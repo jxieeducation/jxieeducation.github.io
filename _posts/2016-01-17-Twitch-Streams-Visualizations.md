@@ -3,6 +3,7 @@ layout: post
 category : paper
 tags: visualization
 tagline: "Twitch Streams Visualization"
+excerpt: Twitch is a place for video game players to share gameplay with others in real time. Being a long time follower of multiple twitch channels, I really wanted to analyze some Twitch data. Fortunately, there was already a published dataset for all the streams between January and April 2014. In this post, I will be sharing some findings and visualizations of twitch streams and streamers.
 ---
 
 ###Twitch Streams Visualization

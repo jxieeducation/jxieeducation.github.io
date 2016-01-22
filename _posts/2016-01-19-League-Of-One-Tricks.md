@@ -3,6 +3,7 @@ layout: post
 category : paper
 tags: visualization
 tagline: "Patch 5.4, 5.5 One Trick Analysis"
+excerpt: As a passionate league of legends player, who only plays one champion, I am really interested in understanding the statistics of one-tricks from a quantitative perspective. This post contains some basic visualizations of the best and worst one-trick champions to carry with, across patch 5.4 and 5.5, which saw the introduction of a new game item, Cinderhulk.
 ---
 
 ###League of One Tricks

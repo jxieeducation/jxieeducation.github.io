@@ -3,6 +3,7 @@ layout: post
 category : paper
 tags: SGD
 tagline: "Hogwild Stochastic Gradient Descent"
+excerpt: Stochastic gradient descent differs from batch gradient descent in that the weights are updated using a single sample as opposed to the whole dataset. Because the weights are updated after every single sample is computed, the weight variable is updated very frequently.
 ---
 
 ##Parallelizing SGD

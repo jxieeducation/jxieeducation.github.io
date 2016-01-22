@@ -3,6 +3,7 @@ layout: post
 category : tutorial
 tags: blockchain
 tagline: "Short Guide To Making Your Own Blockchain"
+excerpt: Blockchain is the crypto algorithm powering bitcoin. It's essentially a universally accessible spreadsheet that everyone can add to, but that no one can edit. In this tutorial, we are going to setup a private blockchain.
 ---
 
 ###Blockchain: A Really short introduction

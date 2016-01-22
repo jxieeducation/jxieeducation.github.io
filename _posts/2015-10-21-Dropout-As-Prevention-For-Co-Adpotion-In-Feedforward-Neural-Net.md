@@ -3,6 +3,7 @@ layout: post
 category : paper
 tags: neuronetwork overfitting
 tagline: "Dropout As Prevention For Co-Adoption In Feedforward Neural Net"
+excerpt: As the size of our neuro nets get larger, it becomes especially easy to overfit. Pretend that we have 20,000 neurons across 20 layers, with only 500 training examples, it's very easy for the net to memorize the shape of the data and come up with some crazy, super high dimension model only to fit the data. Here I present some visualizations of the effects of dropout.
 ---
 
 ##Dropout in Neuro Nets 
