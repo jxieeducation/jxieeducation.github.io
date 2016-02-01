@@ -13,7 +13,7 @@ isNavItem: true
 		<td class="left"><a href="https://www.tubemogul.com/engineering/word2vec-a-foundation-for-machine-learning-research/"><img src="{{site.imgrepo}}/research_icons/link.png"><br>link</a></td>
 		<td>
 			<span class="title1">Word2Vec: A Foundation for Machine Learning Research</span> 
-			<br>John Trinkle, Jason Xie
+			<br>John Trenkle, Jason Xie
 		</td>
 	</tr>
 	</tbody>
