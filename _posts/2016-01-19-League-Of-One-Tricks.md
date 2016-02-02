@@ -6,7 +6,7 @@ tagline: "Patch 5.4, 5.5 One Trick Analysis"
 excerpt: As a passionate league of legends player, who only plays one champion, I am really interested in understanding the statistics of one-tricks from a quantitative perspective. This post contains some basic visualizations of the best and worst one-trick champions to carry with, across patch 5.4 and 5.5, which saw the introduction of a new game item, Cinderhulk.
 ---
 
-###League of One Tricks
+### League of One Tricks
 
 I recently read a [blogpost](https://kwtrnka.wordpress.com/2016/01/15/gains-from-deep-learning/) by Keith Trnka, who is using some basic neuronetworks to predict match outcomes in League of Legends. He conveniently included some great [datasets](https://kwtrnka.wordpress.com/2015/09/21/bigger-league-of-legends-data-set/), which I played around with. 
 
@@ -14,7 +14,7 @@ As a one-trick [Nasus player](http://na.op.gg/summoner/userName=treechoper), I a
 
 ---
 
-###Defining Ability to Carry 
+### Defining Ability to Carry 
 
 I measure someone's one-trick-ness by how exclusively someone plays a champion. 
 
@@ -31,7 +31,7 @@ $Pearson(X, Y) = \dfrac{Cov(X, Y)}{Var(X) * Var(Y)}$
 After calculations of across around 500,000 players, I am able to rank the champions in terms of how possible it is for one-tricks to carry on them.
 ![lol_pearson_screen]({{site.imgrepo}}/lol_pearson_screen.png)
 
-###Some Statistics On One-Tricks
+### Some Statistics On One-Tricks
 
 ![lol_best_54_one_trick]({{site.imgrepo}}/lol_best_54_one_trick.png)
 (Rengar ...)
@@ -53,7 +53,7 @@ After calculations of across around 500,000 players, I am able to rank the champ
 
 
 
-###Interesting Stats on the Patch Change
+### Interesting Stats on the Patch Change
 ![lol_most_nerfed_one_trick]({{site.imgrepo}}/lol_most_nerfed_one_trick.png)
 
 Some thoughts on why Patch 5.5 made it so much harder for these guys to carry:
