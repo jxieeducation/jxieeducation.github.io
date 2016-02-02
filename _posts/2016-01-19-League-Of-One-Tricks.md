@@ -71,6 +71,7 @@ Some thoughts on why Patch 5.5 made it so much harder for these guys to carry:
 ![lol_most_good_one_trick]({{site.imgrepo}}/lol_most_good_one_trick.png)
 
 Some reasons why these champions are the best to carry with:
+
 * Invisible champions can be abused in soloqueue
 * Strong burst mages from (pre-) Patch 5.4
 * Recently released champions that Rito did not nerf from late S4 and early S5
