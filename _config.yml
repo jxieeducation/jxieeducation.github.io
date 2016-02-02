@@ -2,6 +2,7 @@ permalink: /:year-:month-:day/:title/
 
 highlighter: rouge
 markdown: kramdown
+gems: [jekyll-paginate]
 
 paginate: 10
 paginate_path: ":num"

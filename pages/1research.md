@@ -3,7 +3,7 @@ layout: page
 title: Research
 permalink: /research/
 icon: octicon-telescope
-styles: [article-list.css, category.css, research.css]
+styles: [article-list.css,category.css,research.css]
 isNavItem: true
 ---
 
