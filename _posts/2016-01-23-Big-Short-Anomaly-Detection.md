@@ -9,9 +9,11 @@ excerpt: I recently saw the Big Short with coworkers. And man, I am inspired to 
 ---
 
 ### The Big Short
+
 I recently saw the [movie](https://en.wikipedia.org/wiki/The_Big_Short_(film)) with coworkers. And man, I am inspired to learn more about finance and investing. Ok, back to my main point, since I think very highly of the movie, I spent some time figuring out the effects of the movie on Wikipedia.
 
 ### Wikipedia Page Count
+
 Here are some visualizations of the view counts for Wikipedia pages from the 2000s to December 31, 2015.
 
 **[The Big Short (film)](https://en.wikipedia.org/wiki/The_Big_Short_(film))**
