@@ -54,6 +54,7 @@ After calculations of across around 500,000 players, I am able to rank the champ
 
 
 ### Interesting Stats on the Patch Change
+
 ![lol_most_nerfed_one_trick]({{site.imgrepo}}/lol_most_nerfed_one_trick.png)
 
 Some thoughts on why Patch 5.5 made it so much harder for these guys to carry:
