@@ -16,6 +16,7 @@ I spend most of my time understanding and implementing stuff.
 --- 
 
 My contact info:
+
 * {blog's domain name} [@] gmail.com
 * [Github](https://github.com/jxieeducation)
 * [Facebook](https://www.facebook.com/jason.xie.5)
