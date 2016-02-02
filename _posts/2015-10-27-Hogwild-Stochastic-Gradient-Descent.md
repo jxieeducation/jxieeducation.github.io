@@ -6,13 +6,13 @@ tagline: "Hogwild Stochastic Gradient Descent"
 excerpt: Stochastic gradient descent differs from batch gradient descent in that the weights are updated using a single sample as opposed to the whole dataset. Because the weights are updated after every single sample is computed, the weight variable is updated very frequently.
 ---
 
-##Parallelizing SGD
+## Parallelizing SGD
 
 Stochastic gradient descent differs from batch gradient descent in that the weights are updated using a single sample as opposed to the whole dataset. Because the weights are updated after every single sample is computed, the weight variable is updated very frequently.
 
 ---
 
-###How SGD works
+### How SGD works
 
 Repeat until convergence: 
 1. pick a random element in the training set
@@ -28,7 +28,7 @@ Because of the fast updates, SGD has the following properties:
 
 ---
 
-###Parallelizing SGD
+### Parallelizing SGD
 
 Looking at the SGD formula, it appears to be hard to parallelize, because all the weight updates are sequential. This means that we need to finish the current small and quick update before going forward.
 
@@ -40,7 +40,7 @@ Because although weight updates would inevitably overwrite each other, the absen
 
 ---
 
-###Experimental Results on the [Connect 4 Dataset](https://archive.ics.uci.edu/ml/datasets/Connect-4)
+### Experimental Results on the [Connect 4 Dataset](https://archive.ics.uci.edu/ml/datasets/Connect-4)
 
 The dataset's features are the states of each square on the board. Each column can be either B(lank), X or O. And the target variables are (w)in, (d)raw or (l)oss. The features and target are normalized and put through a logistic regression classifier via SGD.
 
@@ -50,6 +50,6 @@ Even though the performance did not improve, the speed of the lock-threaded prov
 
 ![SGD lock vs nolock]({{site.imgrepo}}/sgd-no-lock.png )
 
-###Caveat
+### Caveat
 
 I expected the nolock-threaded speed to plateau while the number of threads are small, because given the unsynchronous nature of weight updates, the time should not increase linearly. However, this hypothesis need to be tested on a really powerful computer before anything is conclusive. 

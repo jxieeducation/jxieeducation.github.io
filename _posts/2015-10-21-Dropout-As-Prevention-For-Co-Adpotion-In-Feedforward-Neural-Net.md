@@ -6,7 +6,7 @@ tagline: "Dropout As Prevention For Co-Adoption In Feedforward Neural Net"
 excerpt: As the size of our neuro nets get larger, it becomes especially easy to overfit. Pretend that we have 20,000 neurons across 20 layers, with only 500 training examples, it's very easy for the net to memorize the shape of the data and come up with some crazy, super high dimension model only to fit the data. Here I present some visualizations of the effects of dropout.
 ---
 
-##Dropout in Neuro Nets 
+## Dropout in Neuro Nets 
   
 As the size of our neuro nets get larger, it becomes especially easy to overfit. Pretend that we have 20,000 neurons across 20 layers, with only 500 training examples, it's very easy for the net to memorize the shape of the data and come up with some crazy, super high dimension model only to fit the data.
 
@@ -14,7 +14,7 @@ Another way to think about it is: pretend that we are studying for a big physics
 
 ---
 
-###How does dropout work? 
+### How does dropout work? 
 
 Normally, the input for a neuron is this:
 
@@ -35,7 +35,7 @@ Here R is a combination of ```0```s and ```1```s. If we want 30% dropout, then t
 
 --- 
 
-###Experiment on the Titanic dataset
+### Experiment on the Titanic dataset
 
 Here is the topology of my net.
 ![dropout diagram]({{site.imgrepo}}/dropout-net-diagram.png )
@@ -48,7 +48,7 @@ Here we see that we are overfitting like crazy when the dropout is small, becaus
 
 ---
 
-###Intuition
+### Intuition
 
 When the size of the neuro net is large, it's easy for neurons to co-adapt, meaning that they work together to fit the model as well as possible. This leads to overfitting, making the net lose much of its predictive power.
 

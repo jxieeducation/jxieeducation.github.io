@@ -6,13 +6,13 @@ tagline: "Short Guide To Making Your Own Blockchain"
 excerpt: Blockchain is the crypto algorithm powering bitcoin. It's essentially a universally accessible spreadsheet that everyone can add to, but that no one can edit. In this tutorial, we are going to setup a private blockchain.
 ---
 
-###Blockchain: A Really short introduction
+### Blockchain: A Really short introduction
 
 Blockchain is the crypto algorithm powering bitcoin. It's essentially a universally accessible spreadsheet that everyone can add to, but that no one can edit. 
 
 A blockchain is made up of blocks. A block is made up of transactions. A transaction is a valid flow of money from one address to the next. And finally, miners hash block-worth of transactions and add them to the blockchain, in exchange for bitcoin rewards. 
 
-###How to setup your own blockchain
+### How to setup your own blockchain
 
 In this tutorial, we are going to setup a private blockchain.
 
@@ -42,6 +42,6 @@ In this tutorial, we are going to setup a private blockchain.
 	- ```multichain-cli chain1 sendassettoaddress <HEX1> FakeCoins 100``` - send 100 FakeCoins from the master node to the second node
 	- ```multichain-cli chain1 getassetbalances '*' 0``` - on both nodes, look at the balance of FakeCoins
 
-###Where to go from here?
+### Where to go from here?
 
 MultiChain is a type of private blockchain, where there's no proof-of-work. Instead of proof-of-work (which is very unscalable), there are permissions and concensus amongst the nodes. [Here](http://www.multichain.com/getting-started/) for more details on using MultiChain.

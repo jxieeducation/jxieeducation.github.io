@@ -57,6 +57,7 @@ After calculations of across around 500,000 players, I am able to rank the champ
 ![lol_most_nerfed_one_trick]({{site.imgrepo}}/lol_most_nerfed_one_trick.png)
 
 Some thoughts on why Patch 5.5 made it so much harder for these guys to carry:
+
 * Elise one-tricks can't carry because Elise can't make use of Cinderhulk
 * Garen is not as tanky as the other Cinderhulk tanks and gets kited
 * Tristana can't deal with the tanks by mid game
