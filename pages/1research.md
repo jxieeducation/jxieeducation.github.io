@@ -29,4 +29,14 @@ isNavItem: true
 	</tr>
 	</tbody>
 </table>
-
+<table>
+	<tbody>
+	<tr>
+		<td class="left"><a href="https://www.slideshare.net/secret/u6fY1SlEcofzF/"><img src="{{site.imgrepo}}/research_icons/link.png"><br>link</a></td>
+		<td>
+			<span class="title1">Pacing in the RTB Space: A Summary of Research Advances</span> 
+			<br>Jason Xie
+		</td>
+	</tr>
+	</tbody>
+</table>
