@@ -7,9 +7,9 @@ excerpt: Evaluating word embeddings
 
 ---
 
-##Evaluating Word Embeddings
+## Evaluating Word Embeddings
 
-###Methods
+### Methods
 
 * word-pair similarities
 	* Get human tagged similarity scores for any 2 words
@@ -35,7 +35,7 @@ excerpt: Evaluating word embeddings
 	* A given word needs to be matched to its closest synonym from 4 given options
 
 
-###Visualization
+### Visualization
 
 * t-SNE
 	* pick seed words (e.g. eye, cough, surgery, tumor)
@@ -43,6 +43,6 @@ excerpt: Evaluating word embeddings
 	* visualize in 2d using t-SNE
 * antonyms and synonyms
 
-###Resources
+### Resources
 
 * [WordVectors.org](http://wordvectors.org/) is a CMU based service that provides quick online testing of embeddings against 10+ datasets
