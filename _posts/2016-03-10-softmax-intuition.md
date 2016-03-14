@@ -1,7 +1,7 @@
 ---
 layout: post
 category : tutorial
-tags: visualization, anomalydetection
+tags: softmax, bandit
 tagline: "Intuition of softmax"
 excerpt: Evolution stages of how the softmax algorithm came to be.
 
