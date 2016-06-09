@@ -8,16 +8,16 @@ paginate: 10
 paginate_path: ":num"
 baseurl: ""
 
-title: "The 20 Year Plan"
+title: "Moon Shots"
 email: "jxieeducation[at]gmail.com"
 description: "[I experiment a lot]"
 github_username:  "jxieeducation"
 disqus_shortname: "jxieeducation"
 
 
-# url: "http://jxieeducation.com"
-# imgrepo: "http://jxieeducation.com/static/img"
-# researchrepo: "http://jxieeducation.com/static/research"
-url: "http://127.0.0.1:4000"
-imgrepo: "http://127.0.0.1:4000/static/img"
-researchrepo: "http://127.0.0.1:4000/static/research"
+url: "http://jxieeducation.com"
+imgrepo: "http://jxieeducation.com/static/img"
+researchrepo: "http://jxieeducation.com/static/research"
+# url: "http://127.0.0.1:4000"
+# imgrepo: "http://127.0.0.1:4000/static/img"
+# researchrepo: "http://127.0.0.1:4000/static/research"
