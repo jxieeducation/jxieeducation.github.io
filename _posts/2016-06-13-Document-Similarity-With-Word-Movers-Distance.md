@@ -2,12 +2,12 @@
 layout: post
 category : paper
 tags: word2vec, wordembedding
-tagline: "Document Similarity with Word Moving Distance"
-excerpt: Document Similarity with Word Moving Distance
+tagline: "Document Similarity with Word Mover's Distance"
+excerpt: Document Similarity with Word Mover's Distance
 
 ---
 
-### Document Similarity with Word Moving Distance
+### Document Similarity with Word Mover's Distance
 
 While Word2Vec is universally adopted in most modern NLP projects, document embedding and similarity have seen less success. There are many different approaches out there.
 
@@ -19,7 +19,7 @@ While Word2Vec is universally adopted in most modern NLP projects, document embe
 * Weighted average w2v vectors (e.g. tf-idf)
 * RNN-based embeddings (e.g. deep LSTM networks)
 
-I am going to try to explain another approach called Word Moving Distance (WMD) by [Matt Kusner](http://mkusner.github.io/). 
+I am going to try to explain another approach called Word Mover's Distance (WMD) by [Matt Kusner](http://mkusner.github.io/). 
 
 ### High Level Intuition
 
@@ -31,7 +31,7 @@ I am going to try to explain another approach called Word Moving Distance (WMD) 
 * Obama speaks media Illinois
 * president greets press Chicago
 
-My sparse vectors for the 2 sentences have no common words and will have a cosine distance of 1. This is a terrible distance score because the 2 sentences have very similar meanings. Word Moving Distance solves this problem by taking account of the words' similarities in word embedding space. 
+My sparse vectors for the 2 sentences have no common words and will have a cosine distance of 1. This is a terrible distance score because the 2 sentences have very similar meanings. Word Mover's Distance solves this problem by taking account of the words' similarities in word embedding space. 
 
 ![WMD](https://vene.ro/images/wmd-obama.png)
 
@@ -75,7 +75,7 @@ It's very intuitive when all the words line up with each other, but what happens
 1. Obama speaks to the media in Illinois --> Obama speaks media Illinois --> 4 words
 2. The president greets the press --> president greets press --> 3 words
 
-WMD stems from an optimization problem called the Earth Moving Distance, which has been applied to tasks like image search. EMD is an optimization problem that tries to solve for **flow**. 
+WMD stems from an optimization problem called the Earth Mover's Distance, which has been applied to tasks like image search. EMD is an optimization problem that tries to solve for **flow**. 
 
 Every unique word (out of N total) is given a flow of ```1 / N```. Each word in sentence 1 has a flow of ```0.25```, while each in sentence 2 has a flow of ```0.33```. Like with liquid, what goes out must sum to what went in. 
 
