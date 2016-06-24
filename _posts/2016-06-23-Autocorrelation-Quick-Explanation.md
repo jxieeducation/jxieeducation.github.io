@@ -1,7 +1,7 @@
 ---
 layout: post
 category : paper
-tags: som, visualization
+tags: visualization, timeseries
 tagline: "Autocorrelation Quick Explanation"
 excerpt: Autocorrelation Quick Explanation
 
@@ -15,7 +15,7 @@ A few months ago, I wrote a post on [time series decomposition]({{ site.url }}//
 
 ### Demo
 
-Autocorrelation tells us about how a time series relate to itself. 
+Autocorrelation tells us about how a time series relates to itself. 
 
 Here is a dataset of the length of English kings' lives.
 
