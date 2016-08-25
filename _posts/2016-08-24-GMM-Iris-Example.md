@@ -102,17 +102,6 @@ ax.scatter(gmm.means_[1][0], gmm.means_[1][1], s=5000 * gmm.covars_[1][0], facec
 ax.scatter(gmm.means_[2][0], gmm.means_[2][1], s=5000 * gmm.covars_[2][0], facecolors='none', edgecolors='r')
 ```
 
-
-
-
-    <matplotlib.collections.PathCollection at 0x108d84690>
-
-
-
-    /Users/jason.xie/anaconda/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
-      if self._edgecolors == str('face'):
-
-
 ![png]({{site.imgrepo}}/gmm_iris.png)
 
 Given a datapoint, we can model the likelihood or pdf. 
