@@ -61,3 +61,9 @@ $$ = \frac{1}{2} \sum_{f=1}^k ((\sum_{i=1}^n v_{i,f} x_i )^2 - \sum_{i=1}^n v_{i
 Since $$ \sum_{i=1}^n v_{i,f} x_i $$ can be precomputed, the complexity is reduced to $$ O(KN) $$. 
 
 *Now that we have a theoretical understanding, in the next post, we will discuss practical use cases for factorization machines.*
+
+### Benchmark (added Sep 24, 2016)
+
+On the standard recommendation dataset, MovieLens-100k, using Vowpal Wabbit, normal linear regression achieved a MSE of 0.9652, while a FM achieved a MSE of 0.9140. 
+
+For a guide on how to do Factorization Machines via Vowpal Wabbit, [see here](https://github.com/JohnLangford/vowpal_wabbit/wiki/Matrix-factorization-example).
