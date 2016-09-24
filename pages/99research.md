@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: page
 title: Research
 permalink: /research/
@@ -55,3 +55,4 @@ isNavItem: true
 	</tr>
 	</tbody>
 </table>
+ -->
