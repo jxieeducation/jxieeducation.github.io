@@ -10,8 +10,6 @@ isNavItem: true
 Hello!
 
 My name is Jason. 
-I build stuff. 
-I spend most of my time understanding and implementing stuff.
 
 --- 
 
