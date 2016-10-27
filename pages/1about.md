@@ -17,4 +17,4 @@ My contact info:
 
 * {blog's domain name} [@] gmail.com
 * [Github](https://github.com/jxieeducation)
-* [Facebook](https://www.facebook.com/jason.xie.5)
+* [Linkedin](https://www.linkedin.com/in/jason-xie)
