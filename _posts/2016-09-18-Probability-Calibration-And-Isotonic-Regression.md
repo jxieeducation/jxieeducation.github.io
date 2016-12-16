@@ -1,9 +1,9 @@
 ---
 layout: post
-category : tutorial
+category : ml
 tags: isotonic
-tagline: "Isotonic Regression"
-excerpt: Isotonic Regression
+tagline: "Probability-Calibration-And-Isotonic-Regression"
+excerpt: Probability-Calibration-And-Isotonic-Regression
 
 ---
 
@@ -13,15 +13,14 @@ Isotonic Regression (IR) is a special case of a degree 0 spline (aka piece-wise 
 
 Mathematicaly it tries to fit a weighted least-squares via Quadratic Programming. 
 
-$min \sum_{i=0}^{n samples} w_i * (y_i - \hat{y_i})^2 $
+$$min \sum_{i=0}^{n samples} w_i * (y_i - \hat{y_i})^2 $$
 
-$s.t. \hat{y_i} <= \hat{y}_{i+1}$
+$$s.t. \hat{y_i} <= \hat{y}_{i+1}$$
 
 
 Basically, the degree 0 spline needs to be increasing, as illustrated via the green line below.
 
-![isotonic regression diagram]({{site.imgrepo}}/ir_fit1.png )
-
+<center><img style="width:700px;" src="{{site.imgrepo}}/ir_fit1.png" /></center>
 
 ### Application 1: Probability Calibration
 
@@ -33,7 +32,7 @@ Isotonic Regression comes in as function that maps the scores to probabilities. 
 
 Note: We chose Isotonic Regression instead of a normal spline because we want the probability function of the score to be strictly increasing. 
 
-![isotonic regression calibration]({{site.imgrepo}}/ir_calibration.png )
+<center><img style="width:500px;" src="{{site.imgrepo}}/ir_calibration.png" /></center>
 
 ### Application 2: Non-metric Multi Dimensional Scaling
 

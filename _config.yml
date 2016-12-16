@@ -8,9 +8,9 @@ paginate: 10
 paginate_path: ":num"
 baseurl: ""
 
-title: "Moonshots"
+title: "A Bit Less Wrong"
 email: "jxieeducation[at]gmail.com"
-description: "[I experiment a lot]"
+description: ""
 github_username:  "jxieeducation"
 disqus_shortname: "jxieeducation"
 

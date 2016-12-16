@@ -1,6 +1,6 @@
 ---
 layout: post
-category : research
+category : ml
 tags: word2vec, wordembedding
 tagline: "Translation between Word Embeddings"
 excerpt: Translation between Word Embeddings
@@ -29,13 +29,13 @@ model2 - "one" : -5.90761974e-02, -3.17945816e-02, 1.26407698e-01
 
 Fortunately, since the words still have the same relationships, they share a similar geometric structure. I applied PCA on the words "zero", "one", "two", "three", "four" from both models and visualized the relationships between the words.
 
-<img src="https://raw.githubusercontent.com/PragmaticLab/EmbeddingMapper/master/pca_visualization/left.png" alt="Drawing" style="width: 400px;"/>
-<img src="https://raw.githubusercontent.com/PragmaticLab/EmbeddingMapper/master/pca_visualization/right.png" alt="Drawing" style="width: 400px;"/>
+<center><img src="https://raw.githubusercontent.com/PragmaticLab/EmbeddingMapper/master/pca_visualization/left.png" alt="Drawing" style="width: 400px;"/><img src="https://raw.githubusercontent.com/PragmaticLab/EmbeddingMapper/master/pca_visualization/right.png" alt="Drawing" style="width: 400px;"/></center>
 
 We can see that the geometry is very similar, but not quite the same. Hint: The angle between 0 and 1 are different between the first and second model. 
 
 Here is the illustration that Mikolov's PCA visualization from his [paper](http://arxiv.org/pdf/1309.4168.pdf), where the numbers' embeddings came from an English model and a Spanish model. 
-![Mikolov]({{site.imgrepo}}/word_translation_visualization.png)
+
+<center><img src="{{site.imgrepo}}/word_translation_visualization.png" alt="Drawing" style="width: 1000px;"/></center>
 
 This geometric similarity in the PCA visualization suggests that there is a fairly decent linear mapping between models of the same word relationships. 
 

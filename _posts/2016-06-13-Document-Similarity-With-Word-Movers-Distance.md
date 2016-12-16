@@ -1,6 +1,6 @@
 ---
 layout: post
-category : paper
+category : ml
 tags: word2vec, wordembedding
 tagline: "Document Similarity with Word Mover's Distance"
 excerpt: Document Similarity with Word Mover's Distance

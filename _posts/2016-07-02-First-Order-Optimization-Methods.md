@@ -1,9 +1,9 @@
 ---
 layout: post
-category : paper
+category : ml
 tags: optimization
-tagline: "Quick Explanations of Optimization Methods"
-excerpt: Quick Explanation of Optimization Methods
+tagline: "First Order Optimization Methods"
+excerpt: First Order Optimization Methods
 
 ---
 

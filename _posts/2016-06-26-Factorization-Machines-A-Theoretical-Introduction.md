@@ -1,6 +1,6 @@
 ---
 layout: post
-category : paper
+category : ml
 tags: factorizationmachines
 tagline: "What is Factorization Machines?"
 excerpt: What is Factorization Machines?
@@ -9,7 +9,7 @@ excerpt: What is Factorization Machines?
 
 ## Factorization Machines
 
-This is the first post of a series dedicated to factorization machines. This post is going to focus on explaining what factorization machines are and why they are important. The future posts will provide practical modeling examples and a numpy clone implementation of factorization machines.
+This post is going to focus on explaining what factorization machines are and why they are important. The future posts will provide practical modeling examples and a numpy clone implementation of factorization machines.
 
 ### What problem do Factorization Machines solve?
 
